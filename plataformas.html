@@ -6,96 +6,127 @@
   <title>Catálogo de Servicios — Ftstreaming</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root{
-      --bg:#0d0d0d;
-      --gold:#ffd700;
-      --gold-soft:#ffe27a;
-      --wa:#25d366;
-      --text:#f5f5f5;
-      --card:#141414;
-      --radius:16px;
+    :root {
+      --bg: #0d0d0d;
+      --gold: #ffd700;
+      --gold-soft: #ffe27a;
+      --wa: #25d366;
+      --text: #f5f5f5;
+      --card: #141414;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
       background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
       font-family: "Poppins", sans-serif;
       color: var(--text);
       text-align: center;
     }
 
-    header{
-      padding:28px 16px 16px;
-      border-bottom:2px solid var(--gold);
+    header {
+      padding: 28px 16px 16px;
+      border-bottom: 2px solid var(--gold);
       background: #0e0e0e;
-      position: sticky; top:0; z-index: 10;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-    header h1{color:var(--gold);font-size:clamp(1.6rem,3vw,2.2rem);text-shadow:0 0 10px rgba(255,215,0,.5)}
-    header .badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0 6px}
-    header .badges span{background:#111a2a;border:1px solid rgba(255,215,0,.35);color:var(--gold-soft);padding:4px 10px;border-radius:999px;font-size:.85rem}
-    header p{color:var(--gold-soft);font-size:.9rem}
 
-    main{max-width:900px;margin:0 auto;padding:24px 16px 100px}
-
-    section{margin:34px 0}
-    section h2{
-      color:var(--gold);
-      margin-bottom:12px;
-      text-shadow:0 0 8px rgba(255,215,0,.5);
-      font-size:1.3rem;
+    header h1 {
+      color: var(--gold);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
     }
-    .subtext{color:var(--gold-soft);font-size:.95rem;margin-bottom:16px}
 
-    /* grid igual al del casino */
-    .casino-container{
-      display:grid;
-      grid-template-columns: repeat(2,1fr);
+    header .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 10px 0 6px;
+    }
+
+    header .badges span {
+      background: #111a2a;
+      border: 1px solid rgba(255, 215, 0, 0.35);
+      color: var(--gold-soft);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+
+    header p {
+      color: var(--gold-soft);
+      font-size: 0.9rem;
+    }
+
+    main { max-width: 900px; margin: 0 auto; padding: 24px 16px 100px; }
+
+    section { margin: 34px 0; }
+    section h2 {
+      color: var(--gold);
+      margin-bottom: 12px;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+      font-size: 1.3rem;
+    }
+    .subtext { color: var(--gold-soft); font-size: 0.95rem; margin-bottom: 16px; }
+
+    .casino-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       max-width: 900px;
       margin: 0 auto;
-      padding: 0 0;
+      padding: 0;
     }
 
-    /* tarjeta tipo casino */
-    .card{
+    .card {
       background: var(--card);
       border: 2px solid var(--gold);
       border-radius: 15px;
-      box-shadow: 0 0 10px rgba(255,215,0,.25);
-      transition: transform .25s ease, box-shadow .25s ease;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:14px 16px;
-      text-align:left;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.25);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      text-align: left;
     }
-    .card:hover{ transform: scale(1.03); box-shadow:0 0 20px rgba(255,215,0,.5) }
 
-    .card label{display:flex;align-items:center;gap:12px;width:100%;cursor:pointer}
-    .card input[type="checkbox"]{width:20px;height:20px}
-    .name{font-weight:700;color:var(--gold-soft);}
+    .card:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+    .card label { display: flex; align-items: center; gap: 12px; width: 100%; cursor: pointer; }
+    .card input[type="checkbox"] { width: 20px; height: 20px; }
+    .name { font-weight: 700; color: var(--gold-soft); }
 
-    /* botón WhatsApp */
-    .cta-bar{
-      position: fixed; left:0; right:0; bottom:0;
-      background: linear-gradient(to top, #0b0b0b 65%, rgba(11,11,11,.6));
+    .cta-bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to top, #0b0b0b 65%, rgba(11, 11, 11, 0.6));
       border-top: 2px solid var(--gold);
       padding: 14px 16px;
-      display:grid; place-items:center;
+      display: grid;
+      place-items: center;
     }
-    .btn-wa{
-      width:100%; max-width:900px;
-      background: var(--wa);
-      color:#fff; border:0; border-radius: 999px;
-      padding: 12px 18px; font-weight:700; font-size:1rem;
-      box-shadow: 0 6px 14px rgba(37,211,102,.35);
-      cursor:pointer;
-    }
-    .btn-wa:active{transform:scale(.98)}
 
-    footer{color:var(--gold-soft);font-size:.9rem;margin-top:28px}
-    footer a{color:var(--gold);text-decoration:none}
+    .btn-wa {
+      width: 100%;
+      max-width: 900px;
+      background: var(--wa);
+      color: #fff;
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 6px 14px rgba(37, 211, 102, 0.35);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-wa:active { transform: scale(0.98); }
+    footer { color: var(--gold-soft); font-size: 0.9rem; margin-top: 28px; }
+    footer a { color: var(--gold); text-decoration: none; }
   </style>
 </head>
 <body>
@@ -110,157 +141,94 @@
   </header>
 
   <main>
-
-    <!-- Seguidores -->
-    <section id="seguidores">
-      <h2>👥 Venta de Seguidores</h2>
-      <p class="subtext">Seguidores reales y segmentados.</p>
-
-      <div class="casino-container">
-        <div class="card">
-          <label>
-            <input type="checkbox" data-name="Seguidores Instagram y Facebook" />
-            <span class="name">Seguidores Instagram y Facebook</span>
-          </label>
-        </div>
-        <div class="card">
-          <label>
-            <input type="checkbox" data-name="Seguidores TikTok" />
-            <span class="name">Seguidores TikTok</span>
-          </label>
-        </div>
-        <div class="card">
-          <label>
-            <input type="checkbox" data-name="Seguidores YouTube" />
-            <span class="name">Seguidores YouTube</span>
-          </label>
-        </div>
-      </div>
-    </section>
-
-    <!-- Streaming -->
     <section id="streaming">
       <h2>🎞️ Streaming Premium</h2>
       <p class="subtext">Elegí los servicios que te interesen.</p>
 
       <div class="casino-container">
-        <div class="card"><label><input type="checkbox" data-name="Netflix Original 1 disp." /><span class="name">Netflix Original 1 disp.</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Netflix Miembro extra" /><span class="name">Netflix Miembro extra</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Netflix Standard (cuenta completa)" /><span class="name">Netflix Standard (cuenta completa)</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Netflix Premium (cuenta completa)" /><span class="name">Netflix Premium (cuenta completa)</span></label></div>
-
         <div class="card"><label><input type="checkbox" data-name="Disney+ 1 disp." /><span class="name">Disney+ 1 disp.</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Disney+ (cuenta completa)" /><span class="name">Disney+ (cuenta completa)</span></label></div>
-
+        <div class="card"><label><input type="checkbox" data-name="Disney+ cuenta completa" /><span class="name">Disney+ (cuenta completa)</span></label></div>
+        <div class="card"><label><input type="checkbox" data-name="Netflix Premium" /><span class="name">Netflix Premium</span></label></div>
         <div class="card"><label><input type="checkbox" data-name="Prime Video 1 disp." /><span class="name">Prime Video 1 disp.</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Prime Video (cuenta completa)" /><span class="name">Prime Video (cuenta completa)</span></label></div>
-
-        <div class="card"><label><input type="checkbox" data-name="Apple TV+ / MLS 1 disp." /><span class="name">Apple TV+ / MLS 1 disp.</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Apple TV+ / MLS (cuenta completa)" /><span class="name">Apple TV+ / MLS (cuenta completa)</span></label></div>
-
-        <div class="card"><label><input type="checkbox" data-name="Max (HBO) 1 disp." /><span class="name">Max (HBO) 1 disp.</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Max (HBO) (cuenta completa)" /><span class="name">Max (HBO) (cuenta completa)</span></label></div>
-
-        <div class="card"><label><input type="checkbox" data-name="Paramount+ 1 disp." /><span class="name">Paramount+ 1 disp.</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Paramount+ (cuenta completa)" /><span class="name">Paramount+ (cuenta completa)</span></label></div>
-
-        <div class="card"><label><input type="checkbox" data-name="Vix Premium 1 perfil" /><span class="name">Vix Premium 1 perfil</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Vix Premium (cuenta completa)" /><span class="name">Vix Premium (cuenta completa)</span></label></div>
-
+        <div class="card"><label><input type="checkbox" data-name="Paramount+" /><span class="name">Paramount+</span></label></div>
+        <div class="card"><label><input type="checkbox" data-name="Max (HBO)" /><span class="name">Max (HBO)</span></label></div>
+        <div class="card"><label><input type="checkbox" data-name="Apple TV+" /><span class="name">Apple TV+</span></label></div>
+        <div class="card"><label><input type="checkbox" data-name="Vix Premium" /><span class="name">Vix Premium</span></label></div>
         <div class="card"><label><input type="checkbox" data-name="Crunchyroll" /><span class="name">Crunchyroll</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Crunchyroll (cuenta completa)" /><span class="name">Crunchyroll (cuenta completa)</span></label></div>
-
         <div class="card"><label><input type="checkbox" data-name="Mubi" /><span class="name">Mubi</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Mubi (cuenta completa)" /><span class="name">Mubi (cuenta completa)</span></label></div>
       </div>
     </section>
 
-    <!-- Servicios digitales -->
     <section id="digitales">
       <h2>🛠️ Servicios Digitales y Suscripciones</h2>
-
       <div class="casino-container">
-        <div class="card"><label><input type="checkbox" data-name="Canva Pro (consultar planes)" /><span class="name">Canva Pro (consultar planes)</span></label></div>
-
+        <div class="card"><label><input type="checkbox" data-name="Canva Pro" /><span class="name">Canva Pro</span></label></div>
         <div class="card"><label><input type="checkbox" data-name="ChatGPT" /><span class="name">ChatGPT</span></label></div>
         <div class="card"><label><input type="checkbox" data-name="Gemini" /><span class="name">Gemini</span></label></div>
         <div class="card"><label><input type="checkbox" data-name="CapCut Pro" /><span class="name">CapCut Pro</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Scribd" /><span class="name">Scribd</span></label></div>
-
-        <div class="card"><label><input type="checkbox" data-name="YouTube Premium (planes)" /><span class="name">YouTube Premium (planes)</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Tidal HiFi" /><span class="name">Tidal HiFi</span></label></div>
-
-        <div class="card"><label><input type="checkbox" data-name="Spotify (planes)" /><span class="name">Spotify (planes)</span></label></div>
+        <div class="card"><label><input type="checkbox" data-name="Spotify" /><span class="name">Spotify</span></label></div>
+        <div class="card"><label><input type="checkbox" data-name="YouTube Premium" /><span class="name">YouTube Premium</span></label></div>
       </div>
     </section>
 
-    <!-- TV online -->
     <section id="tvonline">
-      <h2>📡 Servicios de TV Online</h2>
+      <h2>📡 TV Online</h2>
       <p class="subtext">Consultá disponibilidad y combinaciones.</p>
-
       <div class="casino-container">
-        <div class="card"><label><input type="checkbox" data-name="TV Online (Android)" /><span class="name">TV Online para Android</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="TV Online (Smart TV)" /><span class="name">TV Online para Smart TV</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="TV Online (Roku)" /><span class="name">TV Online para Roku</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Flow Full 1 dispositivo" /><span class="name">Flow Full — 1 dispositivo</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Flow Full (cuenta completa)" /><span class="name">Flow Full — cuenta completa</span></label></div>
+        <div class="card"><label><input type="checkbox" data-name="Flow Full 1 disp." /><span class="name">Flow Full 1 disp.</span></label></div>
+        <div class="card"><label><input type="checkbox" data-name="Flow Full (cuenta completa)" /><span class="name">Flow Full (cuenta completa)</span></label></div>
+        <div class="card"><label><input type="checkbox" data-name="TV Online Android" /><span class="name">TV Online Android</span></label></div>
+        <div class="card"><label><input type="checkbox" data-name="TV Online Smart TV" /><span class="name">TV Online Smart TV</span></label></div>
       </div>
     </section>
 
-    <!-- Juegos -->
     <section id="juegos">
-      <h2>🎮 Juegos y suscripciones</h2>
+      <h2>🎮 Juegos y Suscripciones</h2>
       <div class="casino-container">
-        <div class="card"><label><input type="checkbox" data-name="Game Pass Xbox Ultimate — 1 mes" /><span class="name">Game Pass Xbox Ultimate — 1 mes</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Game Pass Xbox Ultimate — 2 meses" /><span class="name">Game Pass Xbox Ultimate — 2 meses</span></label></div>
-        <div class="card"><label><input type="checkbox" data-name="Game Pass Xbox Ultimate — 4 meses" /><span class="name">Game Pass Xbox Ultimate — 4 meses</span></label></div>
+        <div class="card"><label><input type="checkbox" data-name="Game Pass Ultimate" /><span class="name">Game Pass Ultimate</span></label></div>
         <div class="card"><label><input type="checkbox" data-name="Prime Gaming" /><span class="name">Prime Gaming</span></label></div>
       </div>
     </section>
 
     <footer>
-      Alex Streaming — Todos los servicios garantizados. <br />
+      FT Streaming — Todos los servicios garantizados. <br />
       ¿Necesitás algo especial? <a href="#" id="linkWsFooter">Escribime</a>.
     </footer>
   </main>
 
   <div class="cta-bar">
-    <button class="btn-wa" id="btnEnviar">Enviar pedido por WhatsApp</button>
+    <a id="btnEnviar" class="btn-wa" href="#" rel="noopener">Enviar pedido por WhatsApp</a>
   </div>
 
   <script>
-  // Teléfono de Alex (solo números, con país)
-  const PHONE = "5493564614556";
+    const PHONE = "5493564614556"; // número de Alex
 
-  function armarMensaje(){
-    const checks = document.querySelectorAll('input[type="checkbox"]:checked');
-    if(!checks.length) return "Hola Alex, quiero info sobre tus servicios.";
-    const items = [];
-    checks.forEach(ch => {
-      const nombre = ch.getAttribute('data-name') || 'Servicio';
-      items.push(`• ${nombre}`);
-    });
-    return `Hola Alex, quiero pedir/consultar:\n${items.join('\n')}\n---\nEnviado desde el catálogo.`;
-  }
+    function armarMensaje() {
+      const checks = document.querySelectorAll('input[type="checkbox"]:checked');
+      if (!checks.length) return "Hola Alex, quiero info sobre tus servicios.";
+      const items = [];
+      checks.forEach(ch => {
+        const nombre = ch.getAttribute('data-name') || 'Servicio';
+        items.push("• " + nombre);
+      });
+      return "Hola Alex, quiero pedir/consultar:\n" + items.join("\n") + "\n---\nEnviado desde el catálogo.";
+    }
 
-  function urlWhatsApp(){
-    const msg = encodeURIComponent(armarMensaje());
-    return `https://wa.me/${PHONE}?text=${msg}`;
-  }
-
-  // Navegación directa (sin pop-up)
-  const btn = document.getElementById('btnEnviar');
-  if (btn) {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      // actualizamos el href y navegamos
-      const url = urlWhatsApp();
-      btn.setAttribute('href', url);
+    function enviarWhatsApp() {
+      const msg = encodeURIComponent(armarMensaje());
+      const url = `https://wa.me/${PHONE}?text=${msg}`;
       window.location.href = url;
-    });
-  }
+    }
 
-  const linkFooter = document.getElementById('linkWsFooter');
-  if (linkFooter) {
-    linkFooter.ad
+    document.getElementById('btnEnviar').addEventListener('click', (e) => {
+      e.preventDefault();
+      enviarWhatsApp();
+    });
+
+    document.getElementById('linkWsFooter').addEventListener('click', (e) => {
+      e.preventDefault();
+      enviarWhatsApp();
+    });
+  </script>
+</body>
+</html>
