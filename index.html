@@ -6,217 +6,102 @@
   <title>Casinos Online — Elegí tu favorito 💰</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #0d0d0d;
-      --gold: #ffd700;
-      --gold-soft: #ffe27a;
-      --wa: #25d366;
-      --text: #f5f5f5;
-    }
+    :root { --bg:#0d0d0d; --gold:#ffd700; --gold-soft:#ffe27a; --wa:#25d366; --text:#f5f5f5; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:radial-gradient(circle at center,#1a1a1a 0%,#000 100%);font-family:"Poppins",sans-serif;color:var(--text);text-align:center}
+    h1{color:var(--gold);font-size:2em;margin-top:25px;text-shadow:0 0 10px rgba(255,215,0,.5)}
+    .subtitulo{color:var(--gold-soft);margin-bottom:30px;font-weight:600}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* GRID */
+    .casino-container{display:grid;grid-template-columns:repeat(2,1fr);gap:25px;max-width:900px;margin:0 auto 40px;padding:0 15px}
+    @media (max-width:600px){.casino-container{grid-template-columns:repeat(2,1fr);gap:20px}}
 
-    body {
-      background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
-      font-family: "Poppins", sans-serif;
-      color: var(--text);
-      text-align: center;
-    }
+    /* CARD */
+    .casino-card{background:#141414;border:2px solid var(--gold);border-radius:15px;overflow:hidden;transition:.3s;box-shadow:0 0 10px rgba(255,215,0,.25);display:flex;flex-direction:column;justify-content:space-between;height:280px}
+    .casino-card:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(255,215,0,.5)}
+    .casino-link{flex:1;display:block;text-decoration:none}
+    .casino-image{width:100%;height:200px;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#000}
+    .casino-card:hover .casino-image{transform:scale(1.03)}
+    .casino-info{padding:12px;display:flex;flex-direction:column;align-items:center;gap:10px}
+    .casino-name{color:var(--gold-soft);font-weight:700;font-size:1.1em}
 
-    h1 {
-      color: var(--gold);
-      font-size: 2em;
-      margin-top: 25px;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    }
+    /* WhatsApp */
+    .whatsapp-btn{background:var(--wa);color:#fff;border:none;border-radius:25px;padding:10px 20px;font-size:.95em;font-weight:600;text-decoration:none;transition:.3s;box-shadow:0 4px 10px rgba(37,211,102,.3)}
+    .whatsapp-btn:hover{background:#1ebc5e;transform:scale(1.08);box-shadow:0 6px 14px rgba(37,211,102,.5)}
 
-    .subtitulo {
-      color: var(--gold-soft);
-      margin-bottom: 30px;
-      font-weight: 600;
-    }
-
-    /* 🎰 GRID */
-    .casino-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      max-width: 900px;
-      margin: 0 auto 40px auto;
-      padding: 0 15px;
-    }
-
-    @media (max-width: 600px) {
-      .casino-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
-    }
-
-    /* 🃏 TARJETAS */
-    .casino-card {
-      background: #141414;
-      border: 2px solid var(--gold);
-      border-radius: 15px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.25);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 280px;
-    }
-
-    .casino-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-    }
-
-    /* 🔗 ENLACE QUE CUBRE LA IMAGEN */
-    .casino-link {
-      flex: 1;
-      display: block;
-      text-decoration: none;
-    }
-
-    .casino-image {
-  width: 100%;
-  height: 200px;              /* ajustá el alto que prefieras */
-  background-size: contain;   /* NO recorta */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #000;     /* bordes de relleno si sobra espacio */
-}
-
-    .casino-card:hover .casino-image {
-      transform: scale(1.05);
-    }
-
-    .casino-info {
-      padding: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .casino-name {
-      color: var(--gold-soft);
-      font-weight: 700;
-      font-size: 1.1em;
-    }
-
-    /* 💬 BOTÓN DE WHATSAPP */
-    .whatsapp-btn {
-      background-color: var(--wa);
-      color: white;
-      border: none;
-      border-radius: 25px;
-      padding: 10px 20px;
-      font-size: 0.95em;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
-    }
-
-    .whatsapp-btn:hover {
-      background-color: #1ebc5e;
-      transform: scale(1.08);
-      box-shadow: 0 6px 14px rgba(37, 211, 102, 0.5);
-    }
-
-    /* 💸 PROMOCIONES */
-    .promos {
-      background: #0e0e0e;
-      border-top: 2px solid var(--gold);
-      border-bottom: 2px solid var(--gold);
-      padding: 40px 20px;
-    }
-
-    .promos h2 {
-      color: var(--gold);
-      margin-bottom: 20px;
-      text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
-    }
-
-    .condiciones {
-      max-width: 700px;
-      margin: auto;
-      background: #1a1a1a;
-      border: 1px solid var(--gold);
-      border-radius: 12px;
-      padding: 20px;
-      color: var(--gold-soft);
-      line-height: 1.6;
-      text-align: left;
-    }
-
-    .condiciones strong {
-      color: var(--gold);
-    }
-
-    footer {
-      color: var(--gold-soft);
-      padding: 25px;
-      text-shadow: 0 0 4px rgba(255, 215, 0, 0.3);
-    }
+    /* Promos */
+    .promos{background:#0e0e0e;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:40px 20px}
+    .promos h2{color:var(--gold);margin-bottom:20px;text-shadow:0 0 8px rgba(255,215,0,.5)}
+    .condiciones{max-width:700px;margin:auto;background:#1a1a1a;border:1px solid var(--gold);border-radius:12px;padding:20px;color:var(--gold-soft);line-height:1.6;text-align:left}
+    .condiciones strong{color:var(--gold)}
+    footer{color:var(--gold-soft);padding:25px;text-shadow:0 0 4px rgba(255,215,0,.3)}
   </style>
 </head>
 <body>
   <h1>🎰 Elegí tu casino favorito 💰</h1>
   <div class="subtitulo">By <strong>Alexis</strong> — Equipo <strong>Blanky B</strong></div>
 
+  <!-- CASINOS -->
   <div class="casino-container">
-    <!-- Ganamos VIP -->
     <div class="casino-card">
       <a href="https://ganamosvip.xyz/" target="_blank" class="casino-link">
-        <div class="casino-image" style="background-image: url('ganamos.jpg');"></div>
+        <div class="casino-image" style="background-image:url('ganamos.jpg');"></div>
       </a>
       <div class="casino-info">
         <div class="casino-name">Ganamos VIP</div>
-        <a href="https://wa.me/5493564614556?text=Hola Alex!%20Quiero%20jugar%20en%20Ganamos%20VIP" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+        <a href="https://wa.me/5493564614556?text=Hola%20Alex!%20Quiero%20jugar%20en%20Ganamos%20VIP" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
       </div>
     </div>
 
-    <!-- Pink Rose -->
     <div class="casino-card">
       <a href="https://pinkrose.one" target="_blank" class="casino-link">
-        <div class="casino-image" style="background-image: url('pink.jpeg');"></div>
+        <div class="casino-image" style="background-image:url('pink.jpeg');"></div>
       </a>
       <div class="casino-info">
         <div class="casino-name">Pink Rose</div>
-        <a href="https://wa.me/5493564614556?text=Hola Alex!%20Quiero%20jugar%20en%20Pink%20Rose" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+        <a href="https://wa.me/5493564614556?text=Hola%20Alex!%20Quiero%20jugar%20en%20Pink%20Rose" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
       </div>
     </div>
 
-    <!-- Juga En Vivo -->
     <div class="casino-card">
       <a href="https://jugaenvivo.club" target="_blank" class="casino-link">
-        <div class="casino-image" style="background-image: url('en-vivo.jpeg');"></div>
+        <div class="casino-image" style="background-image:url('en-vivo.jpeg');"></div>
       </a>
       <div class="casino-info">
         <div class="casino-name">Juga En Vivo</div>
-        <a href="https://wa.me/5493564614556?text=Hola Alex!%20Quiero%20jugar%20en%20Juga%20En%20Vivo" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+        <a href="https://wa.me/5493564614556?text=Hola%20Alex!%20Quiero%20jugar%20en%20Juga%20En%20Vivo" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
       </div>
     </div>
 
-    <!-- Camel Bet -->
     <div class="casino-card">
       <a href="https://camelbet1.net/" target="_blank" class="casino-link">
-        <div class="casino-image" style="background-image: url('camel.jpeg');"></div>
+        <div class="casino-image" style="background-image:url('camel.jpeg');"></div>
       </a>
       <div class="casino-info">
         <div class="casino-name">Camel Bet</div>
-        <a href="https://wa.me/5493564614556?text=Hola Alex!%20Quiero%20jugar%20en%20Camel%20Bet" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+        <a href="https://wa.me/5493564614556?text=Hola%20Alex!%20Quiero%20jugar%20en%20Camel%20Bet" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
       </div>
     </div>
   </div>
 
+  <!-- PLATAFORMAS STREAMING (una tarjeta del ancho de dos) -->
+  <section id="streaming" style="margin:40px 0;">
+    <h2 style="color:var(--gold);margin-bottom:20px;text-shadow:0 0 8px rgba(255,215,0,.5);">📺 Plataformas Streaming</h2>
+
+    <div class="casino-container" style="display:flex;justify-content:center;">
+      <div class="casino-card" style="width:100%;max-width:460px;">
+        <a href="plataformas.html" target="_blank" class="casino-link">
+          <div class="casino-image" style="background-image:url('img/streaming.jpg');height:200px;"></div>
+        </a>
+        <div class="casino-info">
+          <div class="casino-name">Plataformas Streaming</div>
+          <a href="https://wa.me/5493564614556?text=Hola%20Alex!%20Quiero%20ver%20las%20plataformas%20de%20streaming" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOS -->
   <section class="promos">
     <h2>💸 Promociones y condiciones 💸</h2>
     <div class="condiciones">
@@ -233,3 +118,4 @@
   <footer>💎 Presentado por <strong>Alexis</strong> del equipo <strong>Blanky B</strong> 💎</footer>
 </body>
 </html>
+
