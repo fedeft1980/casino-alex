@@ -84,14 +84,13 @@
     }
 
     .casino-image {
-      width: 100%;
-      height: 180px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-      transition: transform 0.3s ease;
-    }
+  width: 100%;
+  height: 200px;              /* ajustá el alto que prefieras */
+  background-size: contain;   /* NO recorta */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;     /* bordes de relleno si sobra espacio */
+}
 
     .casino-card:hover .casino-image {
       transform: scale(1.05);
