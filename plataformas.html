@@ -230,14 +230,37 @@
   </div>
 
   <script>
-    const PHONE = "5493564614556"; // Alex
+  // Teléfono de Alex (solo números, con país)
+  const PHONE = "5493564614556";
 
-    function armarMensaje(){
-      const checks = document.querySelectorAll('input[type="checkbox"]:checked');
-      if(!checks.length) return "Hola Alex, quiero info sobre tus servicios.";
-      const items = [];
-      checks.forEach(ch => {
-        const nombre = ch.getAttribute('data-name') || 'Servicio';
-        items.push(`• ${nombre}`);
-      });
-      return `Hola Alex, quiero pedir/consultar:\n${items.join('\n')}\n---\nEnv
+  function armarMensaje(){
+    const checks = document.querySelectorAll('input[type="checkbox"]:checked');
+    if(!checks.length) return "Hola Alex, quiero info sobre tus servicios.";
+    const items = [];
+    checks.forEach(ch => {
+      const nombre = ch.getAttribute('data-name') || 'Servicio';
+      items.push(`• ${nombre}`);
+    });
+    return `Hola Alex, quiero pedir/consultar:\n${items.join('\n')}\n---\nEnviado desde el catálogo.`;
+  }
+
+  function urlWhatsApp(){
+    const msg = encodeURIComponent(armarMensaje());
+    return `https://wa.me/${PHONE}?text=${msg}`;
+  }
+
+  // Navegación directa (sin pop-up)
+  const btn = document.getElementById('btnEnviar');
+  if (btn) {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      // actualizamos el href y navegamos
+      const url = urlWhatsApp();
+      btn.setAttribute('href', url);
+      window.location.href = url;
+    });
+  }
+
+  const linkFooter = document.getElementById('linkWsFooter');
+  if (linkFooter) {
+    linkFooter.ad
