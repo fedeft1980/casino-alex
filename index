@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casinos Online — Elegí tu favorito 💰</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --gold: #ffd700;
+      --gold-soft: #ffe27a;
+      --wa: #25d366;
+      --text: #f5f5f5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+      font-family: "Poppins", sans-serif;
+      color: var(--text);
+      text-align: center;
+    }
+
+    h1 {
+      color: var(--gold);
+      font-size: 2em;
+      margin-top: 25px;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .subtitulo {
+      color: var(--gold-soft);
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    /* 🎰 GRID */
+    .casino-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 900px;
+      margin: 0 auto 40px auto;
+      padding: 0 15px;
+    }
+
+    @media (max-width: 600px) {
+      .casino-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    /* 🃏 TARJETAS */
+    .casino-card {
+      background: #141414;
+      border: 2px solid var(--gold);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 280px;
+    }
+
+    .casino-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    /* 🔗 ENLACE QUE CUBRE LA IMAGEN */
+    .casino-link {
+      flex: 1;
+      display: block;
+      text-decoration: none;
+    }
+
+    .casino-image {
+      width: 100%;
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .casino-card:hover .casino-image {
+      transform: scale(1.05);
+    }
+
+    .casino-info {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .casino-name {
+      color: var(--gold-soft);
+      font-weight: 700;
+      font-size: 1.1em;
+    }
+
+    /* 💬 BOTÓN DE WHATSAPP */
+    .whatsapp-btn {
+      background-color: var(--wa);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-size: 0.95em;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1ebc5e;
+      transform: scale(1.08);
+      box-shadow: 0 6px 14px rgba(37, 211, 102, 0.5);
+    }
+
+    /* 💸 PROMOCIONES */
+    .promos {
+      background: #0e0e0e;
+      border-top: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      padding: 40px 20px;
+    }
+
+    .promos h2 {
+      color: var(--gold);
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+    }
+
+    .condiciones {
+      max-width: 700px;
+      margin: auto;
+      background: #1a1a1a;
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+      padding: 20px;
+      color: var(--gold-soft);
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .condiciones strong {
+      color: var(--gold);
+    }
+
+    footer {
+      color: var(--gold-soft);
+      padding: 25px;
+      text-shadow: 0 0 4px rgba(255, 215, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎰 Elegí tu casino favorito 💰</h1>
+  <div class="subtitulo">By <strong>Alexis</strong> — Equipo <strong>Blanky B</strong></div>
+
+  <div class="casino-container">
+    <!-- Ganamos VIP -->
+    <div class="casino-card">
+      <a href="https://ganamosvip.xyz/" target="_blank" class="casino-link">
+        <div class="casino-image" style="background-image: url('./img/ganamos.jpg');"></div>
+      </a>
+      <div class="casino-info">
+        <div class="casino-name">Ganamos VIP</div>
+        <a href="https://wa.me/5493564614556?text=Hola Alex!%20Quiero%20jugar%20en%20Ganamos%20VIP" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Pink Rose -->
+    <div class="casino-card">
+      <a href="https://pinkrose.one" target="_blank" class="casino-link">
+        <div class="casino-image" style="background-image: url('./img/pink.jpeg');"></div>
+      </a>
+      <div class="casino-info">
+        <div class="casino-name">Pink Rose</div>
+        <a href="https://wa.me/5493564614556?text=Hola Alex!%20Quiero%20jugar%20en%20Pink%20Rose" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Juga En Vivo -->
+    <div class="casino-card">
+      <a href="https://jugaenvivo.club" target="_blank" class="casino-link">
+        <div class="casino-image" style="background-image: url('./img/en-vivo.jpeg');"></div>
+      </a>
+      <div class="casino-info">
+        <div class="casino-name">Juga En Vivo</div>
+        <a href="https://wa.me/5493564614556?text=Hola Alex!%20Quiero%20jugar%20en%20Juga%20En%20Vivo" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Camel Bet -->
+    <div class="casino-card">
+      <a href="https://camelbet1.net/" target="_blank" class="casino-link">
+        <div class="casino-image" style="background-image: url('./img/camel.jpeg');"></div>
+      </a>
+      <div class="casino-info">
+        <div class="casino-name">Camel Bet</div>
+        <a href="https://wa.me/5493564614556?text=Hola Alex!%20Quiero%20jugar%20en%20Camel%20Bet" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="promos">
+    <h2>💸 Promociones y condiciones 💸</h2>
+    <div class="condiciones">
+      <p>💰 <strong>$3000</strong> mínimo de carga.</p>
+      <p>🏦 <strong>$6000</strong> mínimo de retiro.</p>
+      <p>🎲 Sin límites de apuestas.</p>
+      <p>💵 <strong>Abonamos hasta 700K</strong> por usuario.</p>
+      <p>📥 Descargamos el total de tus fichas.</p>
+      <p>⚠️ Un retiro por día, por usuario.</p>
+      <p>🔁 Para retirar, debés duplicar el monto de tu carga inicial.</p>
+    </div>
+  </section>
+
+  <footer>💎 Presentado por <strong>Alexis</strong> del equipo <strong>Blanky B</strong> 💎</footer>
+</body>
+</html>
